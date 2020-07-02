@@ -46,15 +46,19 @@ function App() {
       <div className="resultsBooks">
         {books.map(book => (
           <div className="infoBook" key={book.id}>
-            <img src={
-              book.volumeInfo.readingModes.image === false
-              ? "https://neocultura.com.br/wp-content/uploads/2018/06/imagem_indisponivel.png"
-              : `${book.volumeInfo.imageLinks.thumbnail}`
-            } alt={book.volumeInfo.title} />
-            <h1>{book.volumeInfo.title}</h1>
-            <p>Autor: {book.volumeInfo.authors}</p>
-            <p>Publicado em: {book.volumeInfo.publishedDate}</p>
-            <p>{book.volumeInfo.subtitle}</p>
+            <div className="cardImage">
+              <img src={
+                book.volumeInfo.readingModes.image === false
+                ? "https://neocultura.com.br/wp-content/uploads/2018/06/imagem_indisponivel.png"
+                : `${book.volumeInfo.imageLinks.thumbnail}`
+              } alt={book.volumeInfo.title} />
+            </div>
+            <div className="cardInfo">
+              <h1>{book.volumeInfo.title}</h1>
+              <p><strong>Autor:</strong> {book.volumeInfo.authors}</p>
+              <p><strong>Publicado em:</strong> {book.volumeInfo.publishedDate || 'Sem informação'}</p>
+              <p>{book.volumeInfo.subtitle}</p>
+            </div>
           </div>
         ))}
       </div>

@@ -78,9 +78,15 @@ form {
       max-height: 200px;
       height: 200px;
       max-width: 900px;
+      display: grid;
+      grid-template-columns: 150px 1fr;
   }
 
   .resultsBooks .infoBook img {
-    max-width: 100px;
+    max-width: 120px;
     object-fit: cover;
+  }
+
+  .resultsBooks .infoBook p {
+    padding-top: 5px;
   }
