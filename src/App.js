@@ -54,10 +54,10 @@ function App() {
               } alt={book.volumeInfo.title} />
             </div>
             <div className="cardInfo">
-              <h1>{book.volumeInfo.title}</h1>
-              <p><strong>Autor:</strong> {book.volumeInfo.authors}</p>
-              <p><strong>Publicado em:</strong> {book.volumeInfo.publishedDate || 'Sem informação'}</p>
-              <p>{book.volumeInfo.subtitle}</p>
+              <h1 className="title">{book.volumeInfo.title}</h1>
+              <p className="authors"><strong>Autor:</strong> {book.volumeInfo.authors}</p>
+              <p className="published"><strong>Publicado em:</strong> {book.volumeInfo.publishedDate || 'Sem informação'}</p>
+              <p className="subtitle">{book.volumeInfo.subtitle}</p>
             </div>
           </div>
         ))}

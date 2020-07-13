@@ -27,13 +27,6 @@ h1, h2, h3, h4, h5, h6, p {
     color: rgb(32, 27, 27);
 }
 
-h1 {
-  max-width: 15ch;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 /* FORM */
 
 form {
@@ -72,7 +65,6 @@ form {
 
   /* RESULTS */
 
-
   .resultsBooks {
     display: grid;
     margin: 0 auto;
@@ -84,10 +76,29 @@ form {
   .resultsBooks .infoBook {
       max-height: 200px;
       height: 200px;
-      max-width: 900px;
+      max-width: 440px;
       display: grid;
       grid-template-columns: 150px 1fr;
   }
+
+  .resultsBooks .infoBook .cardInfo h1.title,
+  .resultsBooks .infoBook .cardInfo p.subtitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .resultsBooks .infoBook .cardInfo p.authors,
+  .resultsBooks .infoBook .cardInfo p.published {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
 
   .resultsBooks .infoBook img {
     max-width: 120px;
@@ -96,6 +107,13 @@ form {
 
   .resultsBooks .infoBook p {
     padding-top: 5px;
+  }
+
+  @media (max-width: 930px) {
+    .resultsBooks {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 
   @media (max-width: 750px) {
