@@ -1,4 +1,4 @@
-# FindBook
+# Book Finder App
 
 Aplicação feita em React.js utilizando a api do google livros
 
