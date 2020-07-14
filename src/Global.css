@@ -133,6 +133,14 @@ form {
     padding-top: 4px;
   }
 
+  /* load */
+
+  .load {
+    margin: 0 auto;
+    height: 100px;
+    width: 100px;
+  }
+
   @media (max-width: 930px) {
     .resultsBooks {
       padding-left: 10px;

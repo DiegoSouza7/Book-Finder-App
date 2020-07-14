@@ -3,11 +3,15 @@ import axios from 'axios'
 import { Form } from '@unform/web'
 import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai'
 import Input from './components/InputFind'
+import LoadingAnimation from './components/loading'
 import './Global.css';
+import { useEffect } from 'react';
 
 function App() {
   const formRef = useRef(null)
   const [books, setBooks] = useState([])
+  const [loading, setLoading] = useState(false)
+  let isLoading = ''
 
   async function showClearButton() {
     document.querySelector('.close').style.display = "block"
@@ -23,11 +27,28 @@ function App() {
       axios.get(`https://www.googleapis.com/books/v1/volumes?q=${data.search}`).then(response => {
         setBooks(response.data.items)
       })
-      
+      setLoading(true)
     } catch (err) {
       console.error(err)
     }
   }
+
+  useEffect(() => {
+    setLoading(false)
+    document.querySelector('.resultsBooks').style.display = 'grid'
+  }, [books])
+
+  if(loading === true) (
+    isLoading = (
+    <div className="load">
+      <LoadingAnimation/>
+    </div>
+    )
+  )
+
+  if(loading === true) (
+    document.querySelector('.resultsBooks').style.display = 'none'
+  )
 
   return(
     <>
@@ -62,6 +83,7 @@ function App() {
           </div>
         ))}
       </div>
+      {isLoading}
     </>
   )
 }
