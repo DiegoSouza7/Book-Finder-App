@@ -42,7 +42,7 @@ function App() {
           <AiOutlineSearch size={30} color="rgb(32, 27, 27)" />
         </button>
       </Form>
-
+      
       <div className="resultsBooks">
         {books.map(book => (
           <div className="infoBook" key={book.id}>
@@ -54,8 +54,8 @@ function App() {
               } alt={book.volumeInfo.title} />
             </div>
             <div className="cardInfo">
-              <h1 className="title">{book.volumeInfo.title}</h1>
-              <p className="authors"><strong>Autor:</strong> {book.volumeInfo.authors}</p>
+              <a href={book.volumeInfo.infoLink} rel="noopener noreferrer" target="_blank" className="title">{book.volumeInfo.title}</a>
+              <p className="authors"><strong>Autor:</strong> {book.volumeInfo.authors || 'Sem informação'}</p>
               <p className="published"><strong>Publicado em:</strong> {book.volumeInfo.publishedDate || 'Sem informação'}</p>
               <p className="subtitle">{book.volumeInfo.subtitle}</p>
             </div>

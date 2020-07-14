@@ -24,7 +24,19 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-    color: rgb(32, 27, 27);
+  color: rgb(32, 27, 27);
+}
+
+.title {
+  font-size: 26px;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(32, 27, 27);
+  font-weight: bold;
+}
+
+p {
+  font-size: 14px;
 }
 
 /* FORM */
@@ -79,9 +91,27 @@ form {
       max-width: 440px;
       display: grid;
       grid-template-columns: 150px 1fr;
+      background-color: #fbfbff;
+      border-radius: 4px;
+      border: 1px solid rgb(143, 143, 143);
   }
 
-  .resultsBooks .infoBook .cardInfo h1.title,
+  .resultsBooks .infoBook .cardImage {
+    text-align: center;
+    align-self: center;
+  }
+
+  .resultsBooks .infoBook .cardInfo {
+    padding: 3px 3px 3px 3px;
+  }
+  
+  .resultsBooks .infoBook img {
+    max-width: 120px;
+    max-height: 180px;
+    object-fit: cover;
+  }
+
+  .resultsBooks .infoBook .cardInfo .title,
   .resultsBooks .infoBook .cardInfo p.subtitle {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -99,14 +129,8 @@ form {
     -webkit-box-orient: vertical;
   }
 
-
-  .resultsBooks .infoBook img {
-    max-width: 120px;
-    object-fit: cover;
-  }
-
   .resultsBooks .infoBook p {
-    padding-top: 5px;
+    padding-top: 4px;
   }
 
   @media (max-width: 930px) {
