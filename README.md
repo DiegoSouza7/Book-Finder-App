@@ -2,7 +2,7 @@
 
 Aplicação feita em React.js utilizando a api do google livros
 
-![Foodfy](https://github.com/DiegoSouza7/FindBook/blob/master/FindBook.png)
+![Foodfy](https://github.com/DiegoSouza7/Book-Finder-App/blob/master/Book-Finder.png)
 
 # Como inicializar o projeto:
 
